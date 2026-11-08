@@ -64,7 +64,7 @@ public class MissionDAO {
         return lesMissions;
     }
     
-     public Mission trouverParId(int id) throws SQLException {
+    public Mission trouverParId(int id) throws SQLException {
         String sql = "SELECT * FROM mission WHERE id = ?";
 
         try (Connection connexion = ConnexionBDD.obtenirConnexion(); PreparedStatement requete = connexion.prepareStatement(sql)) {
@@ -81,7 +81,7 @@ public class MissionDAO {
         }
     }
      
-     public int ajouter(Mission mission) throws SQLException {
+    public int ajouter(Mission mission) throws SQLException {
         String sql = "INSERT INTO mission "
                 + "(titre, description, date_debut, date_fin, statut, priorite, budget) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
